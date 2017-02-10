@@ -26,20 +26,20 @@ public class DateInformation {
         return date;
     }
 
-    public String getTimeOfDayAsString() {
-        return getTimeOfDay().getTime();
-    }
-    public Time getTimeOfDay() {
-        int hours = date.getHours();
+//    public String getTimeOfDayAsString() {
+//        return getTimeOfDay().getTime();
+//    }
 
-        if (hours < 8)
-//            return "Morning (00 - 08h)";
-            return Time.MORNING;
-        else if (hours < 16)
-//            return "Afternoon (08 - 16h)";
-        return Time.AFTERNOON;
-        else
-//            return "Evening (16 - 24h)";
-        return Time.EVENING;
+    public Time getTimeOfDay() {
+//        int hours = date.getHours();
+//
+//        if (hours < 8)
+//            return Time.MORNING;
+//        else if (hours < 16)
+//        return Time.AFTERNOON;
+//        else
+//            return Time.EVENING;
+
+        return Time.getTimeOfDay(date);
     }
 }

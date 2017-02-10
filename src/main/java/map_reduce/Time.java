@@ -1,5 +1,7 @@
 package map_reduce;
 
+import java.util.Date;
+
 /**
  * Created by nissatech on 2/6/17.
  */
@@ -16,5 +18,21 @@ public enum Time {
 
     public String getTime() {
         return time;
+    }
+
+    public static Time getTimeOfDay(Date date) {
+        int hours = date.getHours();
+
+        if (hours < 8)
+            return MORNING;
+        else if (hours < 16)
+            return AFTERNOON;
+        else
+            return EVENING;
+    }
+
+    public String getTimeOfDayAsString() {
+        return time;
+//        return getTimeOfDay().getTime();
     }
 }

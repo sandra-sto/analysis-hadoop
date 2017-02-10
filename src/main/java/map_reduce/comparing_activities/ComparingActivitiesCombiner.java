@@ -2,12 +2,10 @@ package map_reduce.comparing_activities;
 
 import java.io.IOException;
 
-import map_reduce.BasicReducer;
 import map_reduce.TelecomunicationActivity;
 import org.apache.hadoop.io.LongWritable;
-import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
-import places.*;
+
 
 
 public class ComparingActivitiesCombiner extends Reducer<LongWritable, TelecomunicationActivity, LongWritable, TelecomunicationActivity> {
