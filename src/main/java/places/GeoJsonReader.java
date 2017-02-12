@@ -21,6 +21,7 @@ public class GeoJsonReader {
 
     private GridCellsData tryReadfromJson(String file) throws IOException, ParseException{
         JSONParser jsonParser = new JSONParser();
+
         Object obj = jsonParser.parse(new FileReader(file));
         JSONObject jsonObject = (JSONObject) obj;
         JSONArray features = (JSONArray) jsonObject.get("features");
@@ -40,6 +41,7 @@ public class GeoJsonReader {
                 JSONArray pointJson = (JSONArray) object;
                 Coordinates coord = new Coordinates((Double) pointJson.get(0), (Double)
                         pointJson.get(1));
+
                 polygon.addCoordinates(coord);
             }
 

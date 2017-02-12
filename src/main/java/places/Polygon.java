@@ -21,6 +21,7 @@ public class Polygon {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
+
         for (Coordinates coord : coordinatesList) {
             builder.append("[" + coord.getLongitude() + ", " + coord.getLatitude() + "] ");
         }
