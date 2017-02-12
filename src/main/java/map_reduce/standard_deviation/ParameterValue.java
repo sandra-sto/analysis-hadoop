@@ -37,6 +37,9 @@ public class ParameterValue implements WritableComparable<ParameterValue>{
         return value;
     }
 
+    public String toString() {
+        return parameterName.toString() + " " + value.toString();
+    }
     @Override
     public boolean equals(Object o) {
         if (o instanceof ParameterValue) {

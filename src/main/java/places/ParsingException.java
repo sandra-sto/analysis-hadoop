@@ -1,4 +1,4 @@
-package xml_parsing;
+package places;
 
 public class ParsingException extends Exception {
 

@@ -33,7 +33,7 @@ public class MainClass {
         String averageActivitiesOutput = baseOutput + "outputAverage";
 //        AverageActivitiesDriver averageActivitiesDriver = new AverageActivitiesDriver();
 //        averageActivitiesDriver.countAverageActivities(input, averageActivitiesOutput);
-//
+
         String standardDeviationOutput = baseOutput + "outputStandardDeviation";
         StandardDeviationDriver standardDeviationDriver = new StandardDeviationDriver();
         standardDeviationDriver.countStandardDeviationForActivities(input, standardDeviationOutput,

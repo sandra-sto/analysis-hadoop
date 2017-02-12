@@ -4,13 +4,11 @@ import map_reduce.BasicDriver;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.DoubleWritable;
-import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.util.ToolRunner;
 
 
 public class AverageActivitiesDriver extends BasicDriver {
@@ -23,7 +21,7 @@ public class AverageActivitiesDriver extends BasicDriver {
         job.setMapperClass(AverageActivitiesMapper.class);
         job.setReducerClass(AverageActivitiesReducer.class);
 
-        job.setOutputKeyClass(NullWritable.class);
+        job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
 
         job.setMapOutputKeyClass(Text.class);

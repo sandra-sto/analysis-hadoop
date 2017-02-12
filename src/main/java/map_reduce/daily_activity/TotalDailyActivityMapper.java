@@ -17,7 +17,6 @@ public class TotalDailyActivityMapper extends Mapper<LongWritable, Text, Text, T
         TelecomunicationActivity activity = TelecomunicationActivityParser.parseFromString(line);
         DateInformation date = activity.getDateInformation();
 
-//        context.write(new LongWritable(activity.getSquareId()), new DoubleWritable(activity.getOverallSmsActivity()));
         context.write(new Text(date.getTimeOfDay().getTime()), activity);
     }
 

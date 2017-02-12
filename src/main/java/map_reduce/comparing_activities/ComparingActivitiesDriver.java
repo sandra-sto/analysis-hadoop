@@ -12,7 +12,6 @@ import org.apache.hadoop.mapreduce.Job;
 
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.util.ToolRunner;
 
 
 public class ComparingActivitiesDriver extends BasicDriver {

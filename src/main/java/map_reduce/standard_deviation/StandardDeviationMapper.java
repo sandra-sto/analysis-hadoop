@@ -14,7 +14,6 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 public class StandardDeviationMapper extends Mapper<LongWritable, Text, ParameterValue, DoubleWritable> {
-
     double averageSms;
     double averageCall;
     double averageInternet;
@@ -27,14 +26,19 @@ public class StandardDeviationMapper extends Mapper<LongWritable, Text, Paramete
             BufferedReader reader = new BufferedReader(new FileReader(pathToAverages));
             String line;
 
-            line = reader.readLine();
-            averageSms = Double.parseDouble(line);
+            while((line = reader.readLine()) != null) {
+                String[] parts = line.split("\t");
+                String parameter = parts[0];
 
-            line = reader.readLine();
-            averageCall = Double.parseDouble(line);
+                double value = Double.parseDouble(parts[1]);
 
-            line = reader.readLine();
-            averageInternet = Double.parseDouble(line);
+                if(parameter.equals("Sms"))
+                    averageSms = value;
+                else if(parameter.equals("Call"))
+                    averageCall = value;
+                else
+                    averageInternet = value;
+            }
 
         } catch(Exception e) {
             e.printStackTrace();
@@ -48,11 +52,6 @@ public class StandardDeviationMapper extends Mapper<LongWritable, Text, Paramete
         double squaredDifferenceFromAverageSms = Math.pow(activity.getOverallSmsActivity().get() - averageSms, 2);
         double squaredDifferenceFromAverageCall = Math.pow(activity.getOverallCallActivity().get() - averageCall, 2);
         double squaredDifferenceFromAverageInternet = Math.pow(activity.getInternetActivity().get() - averageInternet, 2);
-
-
-//        context.write(new Text("Sms"), new DoubleWritable(squaredDifferenceFromAverageSms));
-//        context.write(new Text("Calls"), new DoubleWritable(squaredDifferenceFromAverageCall));
-//        context.write(new Text("Internet"), new DoubleWritable(squaredDifferenceFromAverageInternet));
 
         context.write(new ParameterValue("Sms", averageSms), new DoubleWritable(squaredDifferenceFromAverageSms));
         context.write(new ParameterValue("Calls", averageCall), new DoubleWritable(squaredDifferenceFromAverageCall));

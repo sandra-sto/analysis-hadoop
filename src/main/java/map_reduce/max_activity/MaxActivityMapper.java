@@ -7,24 +7,19 @@ import map_reduce.TelecomunicationActivityParser;
 import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-import places.PlacesData;
-import xml_parsing.ParsingException;
-import xml_parsing.XmlParser;
-import xml_parsing.XmlParserFactory;
-import xml_parsing.XmlParserType;
 
 public class MaxActivityMapper extends org.apache.hadoop.mapreduce.Mapper<LongWritable, Text, LongWritable, DoubleWritable> {
 
-    PlacesData placesData;
+//    PlacesData placesData;
 
     @Override
     protected void setup(Context context){
-        XmlParser xmlParser = XmlParserFactory.createXmlParser(XmlParserType.SAX_PARSER);
-        try {
-            placesData = xmlParser.parseFromXml("/home/nissatech/Documents/xml.xml");
-        } catch (ParsingException e) {
-            e.printStackTrace();
-        }
+//        XmlParser xmlParser = XmlParserFactory.createXmlParser(XmlParserType.SAX_PARSER);
+//        try {
+//            placesData = xmlParser.parseFromXml("/home/nissatech/Documents/xml.xml");
+//        } catch (ParsingException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public void map(LongWritable ikey, Text ivalue, Context context) throws IOException, InterruptedException {
@@ -32,7 +27,6 @@ public class MaxActivityMapper extends org.apache.hadoop.mapreduce.Mapper<LongWr
         TelecomunicationActivity activity = TelecomunicationActivityParser.parseFromString(line);
 
         context.write(activity.getSquareId(), activity.getOverallSmsActivity());
-//        context.write(new LongWritable(activity.getSquareId()), activity);
     }
 
 }

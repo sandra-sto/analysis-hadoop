@@ -2,7 +2,6 @@ package map_reduce.daily_activity;
 
 import java.io.IOException;
 
-import map_reduce.BasicReducer;
 import map_reduce.TelecomunicationActivity;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;

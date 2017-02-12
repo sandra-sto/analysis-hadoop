@@ -6,7 +6,6 @@ import map_reduce.BasicReducer;
 import map_reduce.TelecomunicationActivity;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Reducer;
 import places.*;
 
 
@@ -27,7 +26,6 @@ public class ComparingActivitiesReducer extends BasicReducer<LongWritable, Telec
 
         GridCell cell = gridCellsData.getGridCell(_key.get());
         context.write(new Text(cell.toString()), new Text(text));
-//        context.write(_key, new Text(text));
     }
 
 }

@@ -4,14 +4,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import xml_parsing.ParsingException;
 
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- * Created by nissatech on 2/5/17.
- */
 public class GeoJsonReader {
     public GridCellsData readFromJson(String file) throws ParsingException{
         try {

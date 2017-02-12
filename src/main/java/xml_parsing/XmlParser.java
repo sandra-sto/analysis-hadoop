@@ -1,6 +1,7 @@
 package xml_parsing;
 
 
+import places.ParsingException;
 import places.PlacesData;
 
 public interface XmlParser {

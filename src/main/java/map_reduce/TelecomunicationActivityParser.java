@@ -8,7 +8,6 @@ public class TelecomunicationActivityParser {
         double callOutActivity = 0;
         double internetActivity = 0;
 
-
         String[] parts = line.split("\t");
         int length = parts.length;
 

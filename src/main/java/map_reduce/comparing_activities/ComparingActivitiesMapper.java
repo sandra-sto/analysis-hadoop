@@ -15,7 +15,6 @@ public class ComparingActivitiesMapper extends Mapper<LongWritable, Text, LongWr
         String line = ivalue.toString();
         TelecomunicationActivity activity = TelecomunicationActivityParser.parseFromString(line);
 
-//        context.write(new LongWritable(activity.getSquareId()), new DoubleWritable(activity.getOverallSmsActivity()));
         context.write(activity.getSquareId(), activity);
     }
 

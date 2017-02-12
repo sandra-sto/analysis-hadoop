@@ -9,9 +9,6 @@ import java.io.DataOutput;
 import java.io.IOException;
 import java.util.Date;
 
-/**
- * Created by nissatech on 1/28/17.
- */
 public class TelecomunicationActivity implements WritableComparable<TelecomunicationActivity>{
     LongWritable squareId;
     LongWritable time;

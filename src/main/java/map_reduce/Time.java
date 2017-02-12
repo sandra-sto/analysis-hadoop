@@ -2,9 +2,6 @@ package map_reduce;
 
 import java.util.Date;
 
-/**
- * Created by nissatech on 2/6/17.
- */
 public enum Time {
     MORNING, AFTERNOON, EVENING;
 
@@ -14,10 +11,6 @@ public enum Time {
         MORNING.time = "Morning (00 - 08)";
         AFTERNOON.time = "Afternoon (08 - 16)";
         EVENING.time = "Evening (16 - 24)";
-    }
-
-    public String getTime() {
-        return time;
     }
 
     public static Time getTimeOfDay(Date date) {
@@ -31,8 +24,12 @@ public enum Time {
             return EVENING;
     }
 
+    public String getTime() {
+        return time;
+    }
+
+
     public String getTimeOfDayAsString() {
         return time;
-//        return getTimeOfDay().getTime();
     }
 }

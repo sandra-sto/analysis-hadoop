@@ -24,6 +24,7 @@ public class Polygon {
         for (Coordinates coord : coordinatesList) {
             builder.append("[" + coord.getLongitude() + ", " + coord.getLatitude() + "] ");
         }
+
         return builder.toString();
     }
 }

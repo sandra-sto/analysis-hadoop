@@ -2,7 +2,6 @@ package map_reduce.daily_activity;
 
 import java.io.IOException;
 
-import map_reduce.DateInformation;
 import map_reduce.TelecomunicationActivity;
 import map_reduce.TelecomunicationActivityParser;
 import org.apache.hadoop.io.LongWritable;
